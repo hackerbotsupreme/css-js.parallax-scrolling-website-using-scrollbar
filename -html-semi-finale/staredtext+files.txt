@@ -1,0 +1,225 @@
+                                                                  <--Preview-->
+1.Beautiful travel/thailand webpage(21.travel website)
+2.15.beautiful responsive website/15.html . beautiful responsive website 
+3.beautiful music player website (13.html.beautiful music player website )
+moral of all js-practice / sunday - revision - snack 
+  1. points.xtx ,C:\Users\rekha\OneDrive\Desktop\js\freecodecamp\rock-paper-scissors-x3-main\rock-paper-scissors-examples\rock-paper-scissors-example-1\points.xtx
+  2. points.txt, C:\Users\rekha\OneDrive\Desktop\js\freecodecamp\rock-paper-scissors-x3-main\rock-paper-scissors-examples\rock-paper-scissors-example-2\poiints.txt
+'js i done'&'js concepts i done structurly'-->"C:\Users\rekha\OneDrive\Desktop\JS i done.txt"
+
+
+
+                                                                  <--:Content:-->
+
+
+1.Beautiful travel/thailand webpage(21.travel website) 
+  takeaways ---->
+
+  style.css-->
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "poppins", sans-serif;
+        box-sizing: border-box;
+      }
+
+      .hero {
+        width: 100%;
+        height: 100vh;
+        /* margin: 0;
+        padding: 0; */
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(background-pic.png);
+
+          background-size: cover;
+        position: relative;
+        background-position: center;
+        /* background-repeat: no-repeat; */
+      }
+
+      nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 6%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /*   width: 90%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px; */
+      }
+
+      nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 5px 25px;
+        /*margin: top right bottom left  */
+        /*margin: top+right bottom+left  */
+        /* display: inline-block;
+        margin-right: 45px; */
+      }
+
+
+      .title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 160px;
+        /* ANOTHER WAY OF SETTING POSITION THAT I HAVE PRACTICED */
+        /* position: absolute;
+        left: 8%;
+        top: 33%;
+        color: #fff;
+        font-size: 79px;
+        font-weight: 750; */
+
+        /* -webkit-text-stroke:1px #fff; */
+        background-image: linear-gradient(#fff, #fff);
+        color: transparent;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+        background-position: -750px 0;
+        animation: backcolor 5s linear infinite alternate;
+      }
+
+      @keyframes backcolor {
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+  main points --------------------------->
+    background-position: 0 0;--> this means 
+    cliping image to the text -->-webkit-background-clip: text;
+    color: transparent;--> so we can see the element and the background of the parent element together .
+      animation: backcolor 5s linear infinite alternate;
+    /* @keyframes duration | easing-function | delay |
+    iteration-count | direction | fill-mode | play-state | name */
+    animation: 3s ease-in 1s 2 reverse both paused slidein;
+
+    /* @keyframes duration | easing-function | delay | name */
+    animation: 3s linear 1s slidein;
+
+    /* two animations */
+    animation: 3s linear slidein, 3s ease-out 5s slideout;
+    animation: backcolor 5s linear infinite alternate;
+      /* animation: backcolor 5s linear infinite alternate-reverse; */
+2.15.beautiful responsive website/15.html . beautiful responsive website 
+  takeaways --->
+
+    index.html----------------->
+      <div class="row">
+      <div class="col-2">
+                      <img src="controller.png" class="controller">
+                      <div class="colour-box"></div>
+                      <div class="add-btn">
+                          <img src="add.png">
+                          <p><small>Add To Cart </small></p>
+                      </div>
+    style.css----------------->
+      .col-2 {
+        position: relative;
+        flex-basis: 60%;
+        display: flex;
+        align-items: center;
+      }
+      .col-2,
+      .controller {
+        width: 90%;
+      }
+      .colour-box {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: linear-gradient(#ff54a2, #ff575a);
+        border-radius: 20px 0 0 20px;
+        height: 100%;
+        width: 80%;
+        z-index: -1;
+        transform: translateX(150px);
+      }
+      .add-btn img {
+        width: 35px;
+        margin-bottom: 5px;
+      }
+
+      .add-btn {
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+      }
+
+    main-points(specifics) ---------------------->
+    flex-basis: 60%;
+    content: "";
+    transition: width 0.5s;
+    background: linear-gradient(to right, #fb5283, #ff3527);
+    margin: 20px 0 10px;
+    border-radius: 20px 0 0 20px;
+    text-decoration: none;
+    list-style: none;
+    .col-1::after {
+        z-index: -1;
+        overflow: hidden;
+        display: none;
+        text-align: center;
+        @media only screen and (max-width: 700px) 
+3.beautiful music player website (13.html.beautiful music player website )
+
+  getaways-->
+    index.html-------------------->
+      <script>
+        var mySong=document.getElementById("mySong")
+        var icon=document.getElementById("icon")
+        icon.onclick=function(){
+            if(mySong.paused){
+                mySong.play();
+                icon.src="pause.png";
+            }else{
+                mySong.pause();
+                icon.src="play.png";
+            }
+        }
+
+      </script>
+      audio also has controls property that used to make it interacteble to user .
+
+      <audio id="mySong">
+            <source src="Blue Dream - Cheel.mp3" type="audio/mp3">
+        </audio>
+
+    style.css------------------------>
+    .container{
+        width: 100%;
+        height: 100vh;
+        background-image:url(image.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position-y: 10%;
+        background-size: cover;
+    }
+5.gems/crux  of positioning of css -->
+  2.relative ---> relative does not break the document flow. When an element is set to position: relative, it still remains within the normal document flow, meaning it will take up space in the layout and other elements will flow around it as if it were in its original position.
+  3.absolute --->Yes, position: absolute does break the document flow. When an element is set to position: absolute, it is removed from the normal document flow and positioned relative to its nearest positioned ancestor. If there is no positioned ancestor, it is positioned relative to the initial containing block, which is typically the <html> element.
+  4.static  --->No, position: static does not break the document flow. In fact, position: static is the default position value for elements, and it keeps the element within the normal document flow.
+  5.sticky --->No, position: sticky does not break the document flow. Like position: relative, it allows an element to remain within the normal document flow while providing a sticky positioning behavior.
+  6.fixed --->Yes, position: fixed does break the document flow.
+  When an element is set to position: fixed, it is removed from the normal document flow, and its position is determined relative to the viewport. This means that the fixed element will not affect the position or layout of other elements on the page.
+
+  viewport(vp)-->
+  The term "viewport" refers to the visible portion of a web page within a web browser window. It represents the area of the browser window that displays the content of a web page without any scrolling
+  &
+  viewheight(viewheight)-->The viewport height is the height of the browser's viewport or the visible area of the web page. It is a dynamic measurement that adjusts automatically if the user resizes the browser window.Viewport height units (vh) are commonly used in responsive web design to create elements that scale proportionally to the height of the viewport, ensuring a consistent and fluid layout across different devices and screen sizes.
+
+moral of all js-practice / sunday - revision - snack 
+  1. points.xtx ,C:\Users\rekha\OneDrive\Desktop\js\freecodecamp\rock-paper-scissors-x3-main\rock-paper-scissors-examples\rock-paper-scissors-example-1\points.xtx
+  2. points.txt, C:\Users\rekha\OneDrive\Desktop\js\freecodecamp\rock-paper-scissors-x3-main\rock-paper-scissors-examples\rock-paper-scissors-example-2\poiints.txt
+'js i done'&'js concepts i done structurly'-->"C:\Users\rekha\OneDrive\Desktop\JS i done.txt"
+
+

@@ -1,0 +1,54 @@
+notice : remember that not to put more than one solution in one explanation/code
+21.travel website->
+1. perfectly centering the background picture no scrolling.
+
+1. mistake 
+html - 
+<body>
+  <div class="container">
+    <img src="background-pic.png" alt="">
+  </div>
+</body>
+css-
+img{
+    height:100vh ;
+    width:100%;
+    background-size: cover;
+    background-position: center;
+
+}
+2. corrected code 
+html - 
+<body>
+    <div class="hero">
+        <nav><img src="logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Places</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="title">Thailand</h1>
+    </div>
+</body>
+css- 
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(background-pic.png);
+    /* position: relative; */
+
+}
+
+3. logical why 
+memorize -->     background-image is  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(background-pic.png);
+
+In your CSS code, you have applied the background properties to the img tag, which is incorrect. The img tag is used to display an inline image, not to create a background effect. This is why you are experiencing the scroll effect, as the img element is being treated as a regular inline image within the body of the HTML document.
+
+
+notice : remember that not to put more than one solution in one explanation/code

@@ -1,0 +1,196 @@
+1>21.travel website->
+    In your CSS code, you have applied the background properties to the img tag, which is incorrect. The img tag is used to display an inline image, not to create a background effect. This is why you are experiencing the scroll effect, as the img element is being treated as a regular inline image within the body of the HTML document.
+    style.css->
+    .title{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 160px;
+                /* -webkit-text-stroke:1px #fff; */
+                color: transparent;
+                background-image: linear-gradient(#fff,#fff);
+                background-repeat: no-repeat;
+                -webkit-background-clip: text;
+                background-position: -750px 0;
+                animation: backcolor 5s linear infinite  alternate ;
+            }
+
+            @keyframes backcolor{
+                100%{
+                    background-position: 0 0;
+                }
+            }
+            1.what do  -webkit-background-clip  this do in css ?
+            In CSS, the -webkit-background-clip property specifies how the background image or color should be clipped or displayed in relation to the element's padding box. It is a vendor-specific property specifically designed for the WebKit rendering engine (used by browsers such as Safari and older versions of Chrome).
+            The color: transparent; property is setting the text color of the element to be transparent, which means the text content within that element will not be visible. It will effectively make the text "invisible" while still occupying space within the layout.
+    style.css(mistakes)->
+        .container p {
+    color: white;
+    font-size: 200px;
+    background-image: linear-gradient(#fff,#fff);
+    background-repeat: no-repeat;
+    background-position: -750px 0;
+    -webkit-background-clip: text;
+    animation: backcolor 3s linear alternate infinite;
+    }
+        explanation -->
+        The reason the animation is not working as intended is that you are trying to animate the background-position property while using -webkit-background-clip: text;. Animating background-position with -webkit-background-clip: text; can be a tricky combination because of how the -webkit-background-clip property works.
+
+    The -webkit-background-clip: text; property allows you to clip the background image to the shape of the text, so the text appears to have a background color or gradient. However, animating background-position with -webkit-background-clip: text; doesn't always behave as expected, especially when it comes to animating gradients.
+
+    To achieve the effect of animating a background gradient within the text, you can use an alternative approach. One popular technique is to use a pseudo-element, such as ::before or ::after, and animate the opacity of the pseudo-element to create the illusion of the gradient animation within the text.
+
+2>music player website ->
+    index.html->
+        <div class="content">
+                    <div class="left-col">
+                        <h1>THE <br>REAL <br>SOUND </h1>
+                    </div>
+                    <div class="right-col">
+                        <P>CLICK HERE TO LISTEN </P>
+                        <img src="play.png"  id="icon">
+                    </div>
+                </div>
+            </div>
+            <audio id="mySong">
+                <source src="song1.mp3.mp3" type="audio/mp3">
+            </audio>
+            <script>
+                var mySong=document.getElementById("mySong")
+                var icon=document.getElementById("icon")
+                icon.onclick=function(){
+                    if(mySong.paused){
+                        mySong.play();
+                        icon.src="pause.png";
+                    }else{
+                        mySong.pause();
+                        icon.src="play.png";
+                    }
+                }
+
+            </script>
+    style.css-->
+        .content{
+            width: 100%;
+            position: absolute;
+            top: 30%;
+        }
+3>21.travel website (thailand) ->
+    style.css->
+        .title{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 160px;
+            /* -webkit-text-stroke:1px #fff; */
+            color: transparent;
+            background-image: linear-gradient(#fff,#fff);
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            background-position: -750px 0;
+            animation: backcolor 5s linear infinite  alternate ;
+        }
+
+        @keyframes backcolor{
+            100%{
+                background-position: 0 0;
+            }
+        }
+4> 15.html.beautiful responsive ps4 website->
+    1.margin:auto means -->Shorthand property to set values for the thickness of the margin area. If left is omitted, it is the same as right. If bottom is omitted it is the same as top, if right is omitted it is the same as top. Negative values for margin properties are allowed, but there may be implementation-specific limits.
+    margin: auto; to an element, it essentially centers the element horizontally within its containing block.
+    and this is how you use it - 
+    width: 200px;
+    margin: 50px auto 0; /* top margin, horizontal centering */
+    2.In your CSS, the .colourbox div is not displaying properly because its height is set to 100% but its parent container, .col-2, does not have a defined height. When you set a percentage height (100%) on an element, it is relative to the height of its parent.
+
+    In your case, the parent .col-2 div does not have an explicitly defined height, so the .colourbox div's height of 100% ends up being calculated relative to a height of 0, causing it not to display as expected.
+    3.position: relative; property is used to control the positioning of an element within its containing element (also known as its parent element) or within the normal document flow. When you set an element's position to relative, it remains within the normal flow of the document but can be adjusted using the top, right, bottom, and left properties.
+5> explain 5 positions in css relative to the document flow ?
+    In CSS, positioning refers to the way elements are placed on a web page in relation to the document flow or the normal layout of elements. There are five common positioning methods that can be used to position elements relative to the document flow:
+
+    Static Positioning (Default):
+
+    position: static;
+    This is the default positioning method for all elements.
+    Elements with static positioning follow the normal document flow and are placed in the order they appear in the HTML.
+    Top, right, bottom, left, and z-index properties have no effect on statically positioned elements.
+    Relative Positioning:
+
+    position: relative;
+    Elements with relative positioning are positioned relative to their original position in the document flow.
+    When you set top, right, bottom, or left properties on a relatively positioned element, it moves from its original position based on the given values, but other elements in the document flow are not affected by its movement.
+    It is often used in combination with absolute positioning when you want to position a child element inside a parent container.
+    Absolute Positioning:
+
+    position: absolute;
+    Elements with absolute positioning are positioned relative to the nearest parent element that has a non-static positioning (i.e., relative, absolute, or fixed).
+    When you set top, right, bottom, or left properties on an absolutely positioned element, it is removed from the normal document flow and placed at the specified position relative to its nearest positioned ancestor.
+    Other elements in the document flow will ignore the space occupied by the absolutely positioned element.
+    Fixed Positioning:
+
+    position: fixed;
+    Elements with fixed positioning are positioned relative to the browser's viewport, so they stay in the same position even when the user scrolls the page.
+    When you set top, right, bottom, or left properties on a fixed positioned element, it remains at the specified position regardless of the page's scrolling.
+    Fixed positioning is commonly used for elements like headers, footers, or navigation bars that should remain visible at all times.
+    Sticky Positioning:
+
+    position: sticky;
+    Sticky positioning is a hybrid between relative and fixed positioning.
+    Elements with sticky positioning are positioned based on their original position in the document flow until they reach a specified threshold (e.g., top of the viewport), at which point they become "sticky" and behave like fixed positioned elements.
+    The element will scroll with the document until it reaches the specified offset, then it will stick to that position until it reaches the end of the sticky container or is no longer in the viewport.
+    These positioning methods provide various ways to control the layout and placement of elements on a web page, allowing for more flexible and creative web designs.
+6>
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  complete the code to center an element ?
+  
+    To completely center an element both vertically and horizontally using position: absolute;, you need to adjust its position using the transform property along with top and left properties. This ensures the element is centered precisely, regardless of its dimensions. Here's the complete code to center the element:
+    .element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+    Explanation:
+        position: absolute;: Sets the positioning of the element to be absolute, allowing us to control its position independently of the normal document flow.
+
+        top: 50%; left: 50%;: These properties position the top-left corner of the element at 50% of its parent container both vertically and horizontally.
+
+        transform: translate(-50%, -50%);: This transform rule translates the element back by 50% of its own width and height, effectively centering it both vertically and horizontally. The -50% value moves the element halfway back, which centers it within its parent container.
+
+        With this code, the .element will be perfectly centered both horizontally and vertically within its parent container, regardless of the element's size.
+7>and now how can i make the shadow bigger?
+
+        To make the shadow bigger, you can increase the blur radius in the box-shadow property. The blur radius determines how much the shadow spreads out and creates a softer, larger shadow effect. You can modify the box-shadow property to increase the blur radius as follows:
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase the blur radius to make the shadow bigger */
+
+        To make the shadow bigger, you can increase the blur radius in the box-shadow property. The blur radius determines how much the shadow spreads out and creates a softer, larger shadow effect. You can modify the box-shadow property to increase the blur radius as follows:
+
+        css
+        Copy code
+        * {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        }
+
+        img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 200px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase the blur radius to make the shadow bigger */
+        }
+        In this example, the blur radius is set to 20px, which will create a larger, more spread-out shadow effect compared to the previous example. You can experiment with different blur radius values to achieve the desired shadow size. Larger values will result in a more prominent and extended shadow effect, while smaller values will create a sharper and more subtle shadow.
+         and heres the timinf -->
+           transition: top 0.3s ease, left 0.3s ease; /* Add the transition property for top and left */
+
+8>
+
+
+

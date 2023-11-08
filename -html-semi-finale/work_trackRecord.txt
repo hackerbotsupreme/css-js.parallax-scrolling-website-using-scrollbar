@@ -1,0 +1,508 @@
+Phase 2(round 2)--->
+1st week
+////////////////////////// take1 /////////////////////
+12.6.23->
+  1.beautiful music player website(13.html.beautiful music player website)
+13.6.23->
+  1.dark and light mode (8.html.pic+logo move on hover(dark+light theme))
+  2.beautiful x-box controller seller page(15.html . beautiful responsive website )
+14.6.23-->
+  html and css-->1.beautiful thaailand website,2.animated login form,21.travel website ,
+    js-->space-invaders in js, 
+        rockpaper-scissor in js 
+
+
+    1.beautiful thaailand website (folder name travel website )
+    unique highlights --> 
+      -webkit-text-stroke:1px #fff;
+      color: transparent;
+      background-image: linear-gradient(#fff, #fff);
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      background-position: -750px 0;// When someone writes background-position: -750px 0; in a CSS file, the value -750px corresponds to the horizontal (X) coordinate, and 0 corresponds to the vertical (Y) coordinate.
+      animation: backcolor 5s linear infinite alternate;
+    @keyframes backcolor {
+      100% {
+        background-position: 0 0;
+      }
+    }
+    
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(background-pic.png);
+
+
+    2.animated login form (folder name-20.html.animated login form) 
+    unique highlights-->
+    the border-box
+    * {
+      box-sizing: border-box;
+    }
+
+
+    crits(know use of each/do each one by myself )-->
+    1.what are content and border boxes in css and what are the differences between them ? 
+      Here's a simplified explanation of the moral of the above code from the perspective of the content box and border box:
+      The moral of the code is that the content box and border box models determine how the size of an element is calculated.
+      In the content box model, when you set the width and height of an element, it refers only to the size of the content area. The padding and border are added to the specified dimensions, making the element larger.
+      In the border box model, when you set the width and height of an element, it includes the content area, padding, and border within the specified dimensions. The total size of the element remains fixed, and any padding or border values are accommodated within that size.
+      By understanding the difference between these models, you can control how elements are sized and adjust their appearance on a webpage.
+      
+      html
+          <div class="content-box-example">
+            <p>Content Box Example</p>
+          </div>
+
+          <div class="border-box-example">
+            <p>Border Box Example</p>
+          </div>
+
+      css
+          .content-box-example {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+            box-sizing: content-box;
+          }
+
+          .border-box-example {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+            box-sizing: border-box;
+          }
+
+          why is the box-sizing :border-box is neccesary in this case
+            ChatGPT
+            The box-sizing: border-box; property is necessary in this case to include the padding and border within the total width and height of an element.
+
+            By default, when you set the width and height of an element, it only applies to the content area of the element and does not include any padding or border that you might add. This means that if you set a width of, for example, 300 pixels to an element with 10 pixels of padding and a 2-pixel border, the total width of the element will be 324 pixels (300px + 10px + 10px + 2px + 2px).
+
+            However, by using the box-sizing: border-box; property, you modify the box model behavior so that the specified width and height include the padding and border. In other words, the total width and height of the element will be 300 pixels, and the padding and border will be included within that space.
+
+            In the given HTML and CSS code, the box-sizing: border-box; property is not explicitly used. However, it is a common practice to include it in the global CSS reset or normalize stylesheets to ensure consistent box model behavior throughout the webpage.
+
+            Setting box-sizing: border-box; at the beginning of the CSS file ensures that all elements on the page will have consistent sizing calculations, making it easier to manage and control the layout of elements within the document. It helps prevent unexpected layout issues that may occur due to the default box model behavior.
+    2.how to make two elements inline in html?
+      html
+        <span style="display: inline;">Element 1</span>
+        <span style="display: inline;">Element 2</span>
+    3.what are ::before and ::after elements in css ? nad when they are preffered to use ?
+        1.Here are a few examples that demonstrate the use of ::before and ::after pseudo-elements in CSS code:
+
+        Decorative Content:
+        html
+        <div class="box">
+          Box with decorative content
+        </div>
+        css
+        .box::before {
+          content: "";
+          display: block;
+          background-color: red;
+          width: 10px;
+          height: 10px;
+        }
+
+        2.In this example, the ::before pseudo-element is used to add a red square as decorative content before the text inside the .box element.
+
+        Generated Content:
+        html
+        <ul class="dynamic-list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+
+        css 
+        .dynamic-list li::before {
+          content: attr(data-counter);
+          font-weight: bold;
+          margin-right: 5px;
+        }
+
+        3.In this example, the ::before pseudo-element is used to generate dynamic content by displaying a counter before each list item. The counter value is obtained from the data-counter attribute on each <li> element.
+
+        Clearing Floats:
+        html
+        <div class="clearfix-container">
+          <div class="floated-box"></div>
+          <div class="floated-box"></div>
+          <div class="floated-box"></div>
+        </div>
+
+        css
+        .clearfix-container::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        4.In this example, the ::after pseudo-element is used to clear the floats inside the .clearfix-container. It ensures that the container expands to contain the floated elements properly.
+
+        Custom Styling:
+        html
+        <p class="custom-styling">Styled Paragraph</p>
+        css 
+        .custom-styling::before {
+          content: "Start: ";
+          font-weight: bold;
+        }
+        .custom-styling::after {
+          content: " :End";
+          font-style: italic;
+        }
+        In this example, the ::before pseudo-element is used to add the text "Start: " before the content of the paragraph, and the ::after pseudo-element adds " :End" after the content. This allows for custom styling of specific parts of the paragraph.
+
+        These examples illustrate the different use cases for ::before and ::after pseudo-elements. By manipulating their content and applying styles, you can achieve various visual effects and enhancements in your web design.
+    4.what does -content:" "-   implies in cs  
+        In CSS, the content property is used with pseudo-elements like ::before and ::after to define the content that should be inserted before or after an element. The value of the content property can be text, images, or other CSS-generated content.
+    5.does * means all element in the css file,so does that is saying that every element should be a border box is that right 
+
+        No, the box-sizing: border-box; property is not explicitly set for every element in the provided CSS code.
+
+        In the given code snippet, the box-sizing: border-box; property is not specified for any particular selector. It means that the default value of box-sizing will be used, which is typically content-box for most elements.
+
+        The box-sizing: border-box; property is commonly used as a global reset or normalization technique to ensure consistent box-sizing behavior across all elements on a webpage. However, in the given code, it is not applied globally to all elements using the universal selector *.
+
+        If you want to apply box-sizing: border-box; to all elements, you can modify the code as follows:
+
+        css
+        Copy code
+        * {
+          box-sizing: border-box;
+        }
+        By using the asterisk (*) selector, the box-sizing: border-box; property will be applied to all elements on the page, making them use the border-box box-sizing behavior by default.
+    6.when i dont add positon relative the box::before is also not be seen on the secreen ..explain me why is that ?
+        When you don't add position: relative; to the "box" element, the ::before pseudo-element is still rendered and exists in the DOM, but it may not be visible on the screen. There are a few reasons why this might happen:
+
+        Stacking Context: By default, the ::before pseudo-element is positioned relative to its closest positioned ancestor. If the "box" element doesn't have any positioned ancestor (such as an element with position: relative;, position: absolute;, or position: fixed;), the ::before pseudo-element will be positioned relative to the initial containing block, which is typically the "body" element. In such cases, if the positioning of the ::before pseudo-element is not explicitly defined, it may appear outside the visible area of the screen or behind other elements.
+
+        Dimensions and Positioning: The visibility of the ::before pseudo-element also depends on its dimensions and positioning properties. If the ::before pseudo-element has a width and height of 0 or if its position is set outside the visible area (e.g., using negative top, bottom, left, or right values), it will not be visible on the screen.
+
+        Overlapping or Clipping: It's possible that the ::before pseudo-element is rendered but is overlapped by other elements or is being clipped by an ancestor element with overflow: hidden;. In such cases, adjusting the z-index values or positioning properties of the elements involved may be necessary to make the ::before pseudo-element visible.
+
+        To make the ::before pseudo-element visible, you can try the following:
+
+        Ensure that the "box" element or its closest positioned ancestor has sufficient dimensions and is positioned within the visible area.
+        Define the positioning properties (top, bottom, left, right) of the ::before pseudo-element to position it appropriately within the "box" element.
+        Adjust the z-index values of the elements involved if there are any overlapping or stacking order issues.
+        Check if any ancestor elements have overflow: hidden; that might be clipping the ::before pseudo-element, and make the necessary adjustments.
+        By examining these factors and making the appropriate adjustments, you should be able to make the ::before pseudo-element visible on the screen.
+    7.wht is inset is doing in the css file ?
+          I missed specifying what the inset property applies to in terms of the four directions (top, right, bottom, left).
+
+          The inset property applies to the positioning of an element's box edges, which includes the combination of margin, padding, and border. It sets the distances of an element from the edges of its containing block in all four directions simultaneously.
+
+          Here's a breakdown of how the inset property relates to the four directions:
+
+          inset: <top> <right> <bottom> <left>;
+          This syntax allows you to specify different values for each direction. For example, inset: 10px 20px 30px 40px; sets the top edge at 10 pixels, the right edge at 20 pixels, the bottom edge at 30 pixels, and the left edge at 40 pixels.
+
+          inset: <value>;
+          Using a single value for inset applies the same distance to all four directions. For example, inset: 5px; sets the top, right, bottom, and left edges at 5 pixels from their respective sides.
+
+          So, when you see inset being used in the provided CSS code, it is specifying the distances of the element's edges (including margin, padding, and border) from its containing block's edges in all four directions.
+    8.what are rem and em ? when to use whem?
+          In HTML and CSS, rem, em, and % are units of measurement used for letter sizing (font size). Here's an explanation of each unit:
+
+          rem (root em): It represents the font size relative to the root element (<html>). When you specify a font size in rem, it will be relative to the font size of the root element. For example, if the root element has a font size of 16px and you set 2rem for a specific element, it will be 32px (2 times the font size of the root element).
+
+          em: It represents the font size relative to the font size of the parent element. When you specify a font size in em, it will be relative to the font size of the immediate parent element. For example, if the parent element has a font size of 14px and you set 1.5em for a child element, it will be 21px (1.5 times the font size of the parent element).
+
+          % (percentage): It represents the font size relative to the font size of the parent element. When you specify a font size in %, it will be a percentage of the font size of the immediate parent element. For example, if the parent element has a font size of 18px and you set 120% for a child element, it will be 21.6px (120% of the font size of the parent element).
+
+          These units provide flexibility and allow for scalable and responsive typography. By using relative units like rem, em, and %, you can create font sizes that adapt to different screen sizes and maintain proper proportions within the document structure.
+    9.what is the difference between border and outline explain in very simple words ?
+        Border: The border is a visible line around an element that is a part of the element itself. It is like a fence that surrounds the content and affects the layout of the element. You can control the border's width, style, and color. Borders can have different widths, styles, and colors on each side of an element.
+
+        Outline: The outline is a line drawn around an element but it is not a part of the element itself. It is like a highlighter that goes around the outside of the element without affecting its layout. The outline is usually a single line with a uniform width and color. It does not have different widths or colors on each side. Outlines do not interact with the element's background.
+
+        In summary, the border is part of the element and affects its layout, while the outline is a separate line drawn around the element without affecting the layout. Borders can have different styles, widths, and colors on each side, while outlines are usually a single line with a uniform appearance.
+    10.when do we need outline ?
+          The outline property is commonly used in the following scenarios:
+
+          Keyboard Focus: When navigating through a webpage using the keyboard, such as using the Tab key to move between interactive elements, the outline property can be used to visually highlight the currently focused element. This helps improve accessibility by providing a clear indication of focus for users who rely on keyboard navigation or screen readers.
+
+          Form Fields and Buttons: Adding an outline to form fields and buttons when they receive focus can enhance usability by providing a visual cue to the user about the active element. It helps users understand which element is ready to receive input or trigger an action.
+
+          Accessibility: The outline property is an important accessibility feature as it helps users with visual impairments or motor disabilities to identify interactive elements. By making the focus indicator more prominent, it ensures that users can navigate and interact with the website effectively.
+
+          It's worth noting that the appearance and styling of the outline can be customized to match the overall design of the webpage. Care should be taken to ensure that the outline does not interfere with the overall aesthetics or readability of the page. Additionally, some designers choose to remove or modify the default outline styles and provide alternative visual cues for focus indication while maintaining accessibility.
+
+
+
+
+
+          User
+          demonstrate one useful case of outline via code 
+
+          ChatGPT
+          Certainly! Here's an example that demonstrates a useful case of using the outline property to highlight the focused input field in a form:
+
+          html
+          Copy code
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <title>Outline Example</title>
+              <style>
+                  input:focus {
+                      outline: 2px solid blue;
+                  }
+              </style>
+          </head>
+          <body>
+              <h1>Example Form</h1>
+              <form>
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name">
+                  <br>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email">
+                  <br>
+                  <input type="submit" value="Submit">
+              </form>
+          </body>
+          </html>
+          In the above code, the outline property is applied to the input element when it receives focus. When the user clicks on an input field or tabs to it using the keyboard, a blue outline will appear around the focused input field, indicating that it is the active element. This provides a visual cue to the user, making it easier to identify where they are inputting information.
+
+          You can try running this code in a web browser and see how the outline appears around the focused input field when interacting with the form.
+    11..inputbox input:valid ~ span,.inputbox input:focus ~ span-what do these lines means in the css file .
+        These lines in the CSS file are called CSS selectors and they define a specific styling rule for elements based on their state and relationship to other elements. Let's break down the selectors:
+
+        .inputbox input:valid ~ span: This selector targets the span element that follows an input element with a valid input value. It is using the :valid pseudo-class to select the input element only when its value satisfies any validation constraints set on it (such as required fields or specific input patterns). The ~ selector represents the general sibling combinator, which selects the sibling span element that comes after the input element.
+
+        .inputbox input:focus ~ span: This selector targets the span element that follows a focused input element. It is using the :focus pseudo-class to select the input element when it is currently focused, meaning it is the active element that is receiving user input. The ~ selector selects the sibling span element that comes after the focused input element.
+
+        In both cases, the selectors are used to style the span elements within the .inputbox class based on the state of the preceding input elements. This is commonly used to provide visual feedback or enhancements to the labels or placeholders associated with the input fields. For example, when an input field is valid or focused, the associated label or placeholder may change color, size, or position to provide a better user experience.
+15.6.23->
+  (js i done) revice and restructure , rockpaper-scissor in js ,
+    js(first daily prioriry)-->
+    1.rockpaper-scissor in js 
+
+    unique highlights-->
+    just observe/look at the flow of this(foreach+addeventlistener+innerHTML)
+        choices.forEach(choice=>choice.addEventListener("click", (e)=> {
+            YourChoice.innerHTML =e.target.id
+        }))
+
+    crits(know use of each/do each one by myself )-->
+    list of fuctions  that we can use to register click   in js and give me list
+      Here is a list of some commonly used functions in JavaScript to register click events:
+        addEventListener
+        onclick
+        onmousedown
+        onmouseup
+        ondblclick
+        oncontextmenu
+        onmouseover
+        onmouseout
+        onmousemove
+        ontouchstart
+        ontouchend
+        ontouchmove
+    my mistakes when writing  js
+      corrcet   incorrect 
+      One line up or down or one charecter here and there can create an error like
+      computer choice produces a number  where i was giving '1','2','3' -- that's the reason of giving undefined 
+      what is the differenec between  =,==,=== in js ?
+    my try
+    &
+    // flow:(in the app.js)-->
+      1.a parameter name in the arrow function inside the forEach loop
+      2.so can we randomly declare/use parameter names in js withot gettting an error ? 
+      3.The Math.random() function does not accept any arguments
+      4.// explain why i need to make this paramter?
+    html(3rd priority) and css(2nd priority)-->
+16.6.23->
+
+  js i done(revice),
+  js(first daily prioriry)-->
+  html and css-->1.beautiful thaailand website
+
+      unique highlights + my try-->
+        index.html-->
+            <!-- index.html -->
+
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <link rel="stylesheet" href="style.css" />
+              <style>
+                @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+              </style>
+              <title>Text Animation</title>
+            </head>
+            <body>
+              <div id="text">AzuraBlade FangSerpent</div>
+
+              <script src="index.js"></script>
+            </body>
+          </html>
+        style.css-->
+              * {
+            margin: 0;
+            border: 0;
+            font-family: "Bebas Neue", sans-serif;
+            color: white;
+          }
+
+          body {
+            width: 100%;
+            height: 100vh;
+            background-color: #202123;
+          }
+          #text {
+          position: absolute ;
+          top: 35%;
+          left: 18%;
+          font-size: 100px;
+          font-weight: 1000;
+          -webkit-text-stroke: 1px red;
+          background-image: linear-gradient(#fff,#fff);
+          -webkit-background-clip: text;
+          color: transparent;
+          background-position: -1000px 0;
+          background-repeat: no-repeat;
+          animation: backcolor 2s linear infinite alternate  ;
+          }
+          @keyframes backcolor {
+            100% {
+              background-position: 0 0;
+            }
+          }
+
+      crits(know use of each/do each one by myself )-->
+        position: absolute; /* problem  */
+        top: 35%; /* problem  */
+        left: 18%; /* problem  */
+        color: transparent; /* problem  */
+        background-repeat: no-repeat; /* problem  */
+      &
+      // flow:-->
+      position: absolute; /* problem  */
+      top: 35%; /* problem  */
+      left: 18%; /* problem  */
+      color: transparent; /* problem  */
+      background-repeat: no-repeat; /* problem  */
+19.6.23
+  js(first daily prioriry)-->
+    1.rock-paper-scissor game (first file) revice (open points.xtx ,C:\Users\rekha\OneDrive\Desktop\practice setup\points.xtx)
+    2.rock-paper-scissor game (first file) revice (open  points.txt, C:\Users\rekha\OneDrive\Desktop\rock-paper-scissors-x3-main\rock-paper-scissors-examples\rock-paper-scissors-example-2\points.txt)
+  html and css-->none
+20.6.23->
+  js(first daily prioriry)-->
+    1.js i done(revice)
+  html and css-->
+21.6.23->
+    js(first daily prioriry)-->
+        1.js i done(revice)
+        2.space-invaders-master(revice),C:\Users\rekha\OneDrive\Desktop\js\freecodecamp\space-invaders-master\points.txt
+    html and css-->revice-->
+      21.travel website (open points.txt , C:\Users\rekha\OneDrive\Desktop\html\21.travel website\points.txt )
+      20.html.animated login form.txt.(open points.txt, C:\Users\rekha\OneDrive\Desktop\html\20.html. animated login form\points.txt)
+22.6.23->
+    js(first daily prioriry)-->
+        1.js i done(revice)
+    html and css-->
+        1.animated login form revice .(C:\Users\rekha\OneDrive\Desktop\html\20.html. animated login form\points.txt)
+        2.32.html.sidebar menu(rough revice)
+23.6.23->
+    js(first daily prioriry)-->
+        1.js i done(revice)
+        2.rock-paper-scissors(file1-revice)
+    html and css-->
+        1.32.html.sidebar menu(rough revice)
+        2.8.html.pic + logo move on hover( dark+light theme)(rough revice)(open points.txt, C:\Users\rekha\OneDrive\Desktop\html\8.html.pic + logo move on hover( dark+light theme)\points.txt)
+        3.animated login form revice .(C:\Users\rekha\OneDrive\Desktop\html\20.html. animated login form\points.txt)
+24.6.23->
+    js(first daily prioriry)-->
+        1.js i done(revice)
+        2.rock-paper-scissor-2, poiints.txt, C:\Users\rekha\OneDrive\Desktop\js\freecodecamp\rock-paper-scissors-x3-main\rock-paper-scissors-examples\rock-paper-scissors-example-2\poiints.txt
+        2.rock-paper-scissor-3(structuring is quite special), points.txt, C:\Users\rekha\OneDrive\Desktop\js\freecodecamp\rock-paper-scissors-x3-main\rock-paper-scissors-examples\rock-paper-scissors-example-3\points.txt
+    html and css-->
+            1.32.html.sidebar menu(rough revice)
+            2.8.html.pic + logo move on hover( dark+light theme)(rough revice)(look style.css , index.html and points.txt, C:\Users\rekha\OneDrive\Desktop\8.html.pic + logo move on hover( dark+light theme)\index.html   C:\Users\rekha\OneDrive\Desktop\html\8.html.pic + logo move on hover( dark+light theme)\style.css)
+            3.animated login form revice .(C:\Users\rekha\OneDrive\Desktop\html\20.html. animated login form\points.txt)
+24.6.23->
+    js(first daily prioriry)-->
+      1.js i done(revice)
+      2. js i done structuraly(revice)
+    html and css-->
+      1.27.Beautiful glowing messagebox
+      2.12.html.stylish pop up menu bar,C:\Users\rekha\OneDrive\Desktop\html\12.html.stylish pop up menu bar\points.txt
+      3.13.html.beautiful music player website,C:\Users\rekha\OneDrive\Desktop\html\13.html.beautiful music player website\points.txt
+      4.15.html.beautiful responsive ps4 website,C:\Users\rekha\OneDrive\Desktop\html\15.html.beautiful responsive ps4 website\points.txt
+      5.29.html.qr code generator page with js,C:\Users\rekha\OneDrive\Desktop\html\29.html.qr code generator page with js\points.txt
+      6.23.html.to-do list page,C:\Users\rekha\OneDrive\Desktop\html\23.html.to-do list page\points.txt
+26.6.23->
+ i need to revice -->
+    js(first daily prioriry)-->
+      1.js i done(revice)
+      2. js i done structuraly(revice)
+    html and css-->
+      1.27.Beautiful glowing messagebox
+      2.12.html.stylish pop up menu bar,C:\Users\rekha\OneDrive\Desktop\html\12.html.stylish pop up menu bar\points.txt
+      3.13.html.beautiful music player website,C:\Users\rekha\OneDrive\Desktop\html\13.html.beautiful music player website\points.txt
+      4.15.html.beautiful responsive ps4 website,C:\Users\rekha\OneDrive\Desktop\html\15.html.beautiful responsive ps4 website\points.txt
+      5.29.html.qr code generator page with js,C:\Users\rekha\OneDrive\Desktop\html\29.html.qr code generator page with js\points.txt
+      6.23.html.to-do list page,C:\Users\rekha\OneDrive\Desktop\html\23.html.to-do list page\points.txt
+27.6.23->
+    js(first daily prioriry)-->
+    html and css-->
+    //completing the  valueable revice from  26.6.23.
+27.6.23->
+    js(first daily prioriry)-->
+    html and css-->
+    //completing the  valueable revice from  26.6.23.
+    pop up menubar  important .
+27.6.23->
+  js(first daily prioriry)-->
+   1.glowing animation box 
+   2.file 2, rocj-paper-scicssor 
+  html and css-->
+27.6.23->
+  need to revice -->
+  file 2 , rock-paper-scisccor
+(gem)20.7.23->
+  js(first daily prioriry)-->
+  (gem added)html and css-->
+    1.revicing basics of html with -gem-21.travel website
+22.7.23->
+  js(first daily prioriry)-->
+  (gem added)html and css-->
+    1.travel website 
+    2.music player website 
+    3.15.html.beautiful responsive ps4 website
+
+///////////////////////// take 2 //////////////////
+12.8.23(today)->
+  practiced files - > 
+  1. 15.beautiful ps4 website . 
+  2. rock paper sciscoors (all of them )
+  3. 29.html.qr code generater  
+  js(first daily prioriry)-->
+  (gem added)html and css--> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
